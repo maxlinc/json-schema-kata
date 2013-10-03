@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Generated from spec/fixtures/examples/simple.json with shasum e7f0e9796c7719ec437027ff34c84b353dabd49e",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "required": true
+        },
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "price": {
+            "type": "number",
+            "required": true
+        },
+        "tags": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "required": true
+            }
+        }
+    }
+}
