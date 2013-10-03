@@ -1,168 +1,192 @@
 {
-"$schema": "http://json-schema.org/draft-03/schema#",
-"description": "Generated from spec/fixtures/examples/load_balancer.json with shasum cf9408412884a83aed58bca92933c0ec4a100c6b",
-"type": "object",
-"properties": {
-"loadBalancer": {
-"type": "object",
-"properties": {
-"id": {
-"type": "integer",
-"required": true
-},
-"name": {
-"type": "string",
-"required": true
-},
-"protocol": {
-"type": "string",
-"required": true
-},
-"port": {
-"type": "integer",
-"required": true
-},
-"algorithm": {
-"type": "string",
-"required": true
-},
-"status": {
-"type": "string",
-"required": true
-},
-"timeout": {
-"type": "integer",
-"required": true
-},
-"connectionLogging": {
-"type": "object",
-"properties": {
-"enabled": {
-"type": "boolean",
-"required": true
-}}
-},
-"virtualIps": {
-"type": "array",
-"minItems": 1,
-"uniqueItems": true,
-"items": {
-"type": "object",
-"properties": {
-"id": {
-"type": "integer",
-"required": true
-},
-"address": {
-"type": "string",
-"required": true
-},
-"type": {
-"type": "string",
-"required": true
-},
-"ipVersion": {
-"type": "string",
-"required": true
-}}
-}
-},
-"nodes": {
-"type": "array",
-"minItems": 1,
-"uniqueItems": true,
-"items": {
-"type": "object",
-"properties": {
-"id": {
-"type": "integer",
-"required": true
-},
-"address": {
-"type": "string",
-"required": true
-},
-"port": {
-"type": "integer",
-"required": true
-},
-"condition": {
-"type": "string",
-"required": true
-},
-"status": {
-"type": "string",
-"required": true
-}}
-}
-},
-"sessionPersistence": {
-"type": "object",
-"properties": {
-"persistenceType": {
-"type": "string",
-"required": true
-}}
-},
-"connectionThrottle": {
-"type": "object",
-"properties": {
-"minConnections": {
-"type": "integer",
-"required": true
-},
-"maxConnections": {
-"type": "integer",
-"required": true
-},
-"maxConnectionRate": {
-"type": "integer",
-"required": true
-},
-"rateInterval": {
-"type": "integer",
-"required": true
-}}
-},
-"cluster": {
-"type": "object",
-"properties": {
-"name": {
-"type": "string",
-"required": true
-}}
-},
-"created": {
-"type": "object",
-"properties": {
-"time": {
-"type": "string",
-"required": true
-}}
-},
-"updated": {
-"type": "object",
-"properties": {
-"time": {
-"type": "string",
-"required": true
-}}
-},
-"sourceAddresses": {
-"type": "object",
-"properties": {
-"ipv6Public": {
-"type": "string",
-"required": true
-},
-"ipdraft4Servicenet": {
-"type": "string",
-"required": true
-},
-"ipdraft4Public": {
-"type": "string",
-"required": true
-}}
-}}
-}}
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "description": "Generated from spec/fixtures/examples/load_balancer.json with shasum cf9408412884a83aed58bca92933c0ec4a100c6b",
+  "type": "object",
+  "required": true,
+  "properties": {
+    "loadBalancer": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "id": {
+          "type": "integer",
+          "required": true
+        },
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "protocol": {
+          "type": "string",
+          "required": true
+        },
+        "port": {
+          "type": "integer",
+          "required": true
+        },
+        "algorithm": {
+          "type": "string",
+          "required": true
+        },
+        "status": {
+          "type": "string",
+          "required": true
+        },
+        "timeout": {
+          "type": "integer",
+          "required": true
+        },
+        "connectionLogging": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "required": true
+            }
+          }
+        },
+        "virtualIps": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "integer",
+                "required": true
+              },
+              "address": {
+                "type": "string",
+                "required": true
+              },
+              "type": {
+                "type": "string",
+                "required": true
+              },
+              "ipVersion": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "nodes": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "integer",
+                "required": true
+              },
+              "address": {
+                "type": "string",
+                "required": true
+              },
+              "port": {
+                "type": "integer",
+                "required": true
+              },
+              "condition": {
+                "type": "string",
+                "required": true
+              },
+              "status": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "sessionPersistence": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "persistenceType": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "connectionThrottle": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "minConnections": {
+              "type": "integer",
+              "required": true
+            },
+            "maxConnections": {
+              "type": "integer",
+              "required": true
+            },
+            "maxConnectionRate": {
+              "type": "integer",
+              "required": true
+            },
+            "rateInterval": {
+              "type": "integer",
+              "required": true
+            }
+          }
+        },
+        "cluster": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "name": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "created": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "time": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "updated": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "time": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "sourceAddresses": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "ipv6Public": {
+              "type": "string",
+              "required": true
+            },
+            "ipdraft4Servicenet": {
+              "type": "string",
+              "required": true
+            },
+            "ipdraft4Public": {
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  }
 }

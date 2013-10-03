@@ -2,18 +2,16 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Generated from spec/fixtures/examples/simple2.json with shasum 5f8c7bb298c37e79072e2019426775b4b900c29d",
     "type": "object",
+    "required": ["id", "name", "price", "tags"],
     "properties": {
         "id": {
-            "type": "integer",
-            "required": true
+            "type": "integer"
         },
         "name": {
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         "price": {
-            "type": "number",
-            "required": true
+            "type": "number"
         },
         "tags": {
             "type": "array",
@@ -21,14 +19,13 @@
             "uniqueItems": true,
             "items": {
                 "type": "object",
+                "required": ["home", "color"],
                 "properties": {
                     "home": {
-                        "type": "string",
-                        "required": true
+                        "type": "string"
                     },
                     "color": {
-                        "type": "string",
-                        "required": true
+                        "type": "string"
                     }
                 }
             }

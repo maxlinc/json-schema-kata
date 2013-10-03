@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-03/schema#",
     "description": "Generated from spec/fixtures/examples/simple.json with shasum e7f0e9796c7719ec437027ff34c84b353dabd49e",
     "type": "object",
+    "required": true,
     "properties": {
         "id": {
             "type": "integer",
@@ -17,6 +18,7 @@
         },
         "tags": {
             "type": "array",
+            "required": true,
             "minItems": 1,
             "uniqueItems": true,
             "items": {
