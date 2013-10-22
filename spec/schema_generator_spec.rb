@@ -2,7 +2,7 @@
 
 describe 'generator' do
   drafts = [:draft3, :draft4].each do |draft|
-    context "supports #{draft}" do
+    context "supports #{draft}", :schema_version => draft do
       context 'the description' do
         let(:schema) { invoke_generator 'spec/fixtures/examples/simple.json', draft }
         it 'includes the file name' do

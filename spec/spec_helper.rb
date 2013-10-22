@@ -2,6 +2,10 @@
 require 'json'
 require 'json-schema'
 
+RSpec.configure do |c|
+  c.filter_run_excluding :schema_version => ENV['EXCLUDE_SCHEMA_VERSION']
+end
+
 raise "JSON_GENERATOR environment variable must be set!" unless ENV['JSON_GENERATOR']
 
 def clean_output(output)
