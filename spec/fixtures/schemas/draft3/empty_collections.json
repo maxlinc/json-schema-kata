@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "description": "Generated from spec/fixtures/examples/empty_collections.json with shasum 136e83755f93cb49d7e6cf255c7cbb28f08d59ce",
+    "type": "object",
+    "required": true,
+    "properties": {
+        "id": {
+            "type": "integer",
+            "required": true
+        },
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "price": {
+            "type": "number",
+            "required": true
+        },
+        "array": {
+            "type": "array",
+            "required": true,
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+            }
+        },
+        "hash": {
+             "type": "object",
+             "required": true,
+             "properties": {
+              }
+            }
+    }
+}
