@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "description": "Generated from spec/fixtures/examples/detect_optional.json with shasum 709207ffc34c71ac153b6c07311481158134410e",
+    "type": "object",
+    "required": true,
+    "properties": {
+        "id": {
+            "type": "integer",
+            "required": true
+        },
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "price": {
+            "type": "number",
+            "required": true
+        },
+        "tags": {
+            "type": "array",
+            "required": true,
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "required": true,
+                "properties": {
+                    "home": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "color": {
+                        "type": "string",
+                        "required": false
+                    }
+                }
+            }
+        }
+    }
+}

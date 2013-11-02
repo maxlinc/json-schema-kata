@@ -1,0 +1,23 @@
+{
+  "id":1,
+  "name":"A green door",
+  "price":12.50,
+  "tags":[
+    {
+      "home":"vermont",
+      "color":"green"
+    },
+    {
+      "home":"recife"
+    }
+  ],
+  "hash":[
+    {
+      "deep_required":"abc",
+      "deep_optional":"def"
+    },
+    {
+      "deep_required":"abc"
+    }
+  ]
+}
