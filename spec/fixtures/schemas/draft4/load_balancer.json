@@ -67,6 +67,7 @@
           "uniqueItems": true,
           "items": {
             "type": "object",
+            "required": ["id", "address", "port", "condition", "status"],
             "properties": {
               "id": {
                 "type": "integer"
