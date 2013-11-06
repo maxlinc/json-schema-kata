@@ -12,6 +12,7 @@ desc 'Ensure the reference schemas can validate the examples'
 task :validate_schemas do
   failures = []
   Dir['spec/fixtures/examples/*.json'].each do |example_file|
+    next if example_file =~ /optional/
     example = File.basename example_file
     data = JSON.load(File.read example_file)
 
