@@ -1,40 +1,60 @@
 {
-    "$schema": "http://json-schema.org/draft-03/schema#",
-    "description": "Generated from spec/fixtures/examples/detect_optional.json with shasum 709207ffc34c71ac153b6c07311481158134410e",
-    "type": "object",
-    "required": true,
-    "properties": {
-        "id": {
-            "type": "integer",
-            "required": true
-        },
-        "name": {
-            "type": "string",
-            "required": true
-        },
-        "price": {
-            "type": "number",
-            "required": true
-        },
-        "tags": {
-            "type": "array",
-            "required": true,
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-                "type": "object",
-                "required": true,
-                "properties": {
-                    "home": {
-                        "type": "string",
-                        "required": true
-                    },
-                    "color": {
-                        "type": "string",
-                        "required": false
-                    }
-                }
-            }
+  "$schema":"http://json-schema.org/draft-03/schema#",
+  "description":"Generated from spec/fixtures/examples/detect_optional.json with shasum 0857611ca5599619cc5094a8906403dcf64a8abc",
+  "type":"object",
+  "required":true,
+  "properties":{
+    "id":{
+      "type":"integer",
+      "required":true
+    },
+    "name":{
+      "type":"string",
+      "required":true
+    },
+    "price":{
+      "type":"number",
+      "required":true
+    },
+    "tags":{
+      "type":"array",
+      "required":true,
+      "minItems":1,
+      "uniqueItems":true,
+      "items":{
+        "type":"object",
+        "required":true,
+        "properties":{
+          "home":{
+            "type":"string",
+            "required":true
+          },
+          "color":{
+            "type":"string",
+            "required":false
+          }
         }
+      }
+    },
+    "hash":{
+      "type":"array",
+      "required":true,
+      "minItems":1,
+      "uniqueItems":true,
+      "items":{
+        "type":"object",
+        "required":true,
+        "properties":{
+          "deep_required":{
+            "type":"string",
+            "required":true
+          },
+          "deep_optional":{
+            "type":"string",
+            "required":false
+          }
+        }
+      }
     }
+  }
 }

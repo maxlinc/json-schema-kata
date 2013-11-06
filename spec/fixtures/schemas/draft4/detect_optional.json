@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Generated from spec/fixtures/examples/detect_optional.json with shasum 709207ffc34c71ac153b6c07311481158134410e",
+    "description": "Generated from spec/fixtures/examples/detect_optional.json with shasum 0857611ca5599619cc5094a8906403dcf64a8abc",
     "type": "object",
     "required": ["id", "name", "price", "tags"],
     "properties": {
