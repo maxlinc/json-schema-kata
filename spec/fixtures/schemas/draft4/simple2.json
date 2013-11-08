@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Generated from spec/fixtures/examples/simple2.json with shasum 5f8c7bb298c37e79072e2019426775b4b900c29d",
+    "description": "Generated from kata/spec/fixtures/examples/simple2.json with shasum 5f8c7bb298c37e79072e2019426775b4b900c29d",
     "type": "object",
     "required": ["id", "name", "price", "tags"],
     "properties": {

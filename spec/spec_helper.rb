@@ -1,9 +1,11 @@
 # encoding: utf-8
 require 'json'
 require 'json-schema'
+require 'json_spec'
 
 RSpec.configure do |c|
   c.filter_run_excluding :schema_version => ENV['EXCLUDE_SCHEMA_VERSION']
+  c.include JsonSpec::Helpers
 end
 
 def clean_output(output)
@@ -24,10 +26,14 @@ end
 
 def invoke_challenge challenge, example_file
   example_file = File.absolute_path example_file
-  example_file = example_file.gsub(Dir.pwd + '/', '')
-  challenge_script = "../scripts/challenges/#{challenge}"
-  pending "#{challenge_script} does not exist" unless File.readable? challenge_script
-  `#{challenge_script} #{example_file}`
+  Bundler.with_clean_env do
+    Dir.chdir '..' do
+      example_file = example_file.gsub(Dir.pwd + '/', '')
+      challenge_script = "scripts/challenges/#{challenge}"
+      pending "#{challenge_script} does not exist" unless File.readable? challenge_script
+      `#{challenge_script} #{example_file}`
+    end
+  end
 end
 
 def validate schema, example_file, version

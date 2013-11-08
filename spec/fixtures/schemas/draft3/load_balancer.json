@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-03/schema#",
-  "description": "Generated from spec/fixtures/examples/load_balancer.json with shasum cf9408412884a83aed58bca92933c0ec4a100c6b",
+  "description": "Generated from kata/spec/fixtures/examples/load_balancer.json with shasum cf9408412884a83aed58bca92933c0ec4a100c6b",
   "type": "object",
   "required": true,
   "properties": {

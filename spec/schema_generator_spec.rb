@@ -6,7 +6,7 @@ describe 'generator' do
       context 'the description' do
         let(:schema) { invoke_challenge "generate_#{draft}", 'spec/fixtures/examples/simple.json' }
         it 'includes the file name' do
-          expect(schema).to include('Generated from spec/fixtures/examples/simple.json')
+          expect(schema).to include('Generated from kata/spec/fixtures/examples/simple.json')
         end
         it 'includes the file shasum' do
           expect(schema).to include('with shasum e7f0e9796c7719ec437027ff34c84b353dabd49e')
@@ -19,7 +19,7 @@ describe 'generator' do
           expected = File.expand_path(example, "spec/fixtures/schemas/#{draft.to_s}")
           it "for #{example}" do
             schema = invoke_challenge "generate_#{draft}", example_file
-            compare_without_whitespace schema, File.read(expected)
+            expect(schema).to be_json_eql(File.read(expected))
             validate schema, example_file, draft
           end
         end

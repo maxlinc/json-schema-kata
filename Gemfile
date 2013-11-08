@@ -6,5 +6,6 @@ gem 'rake'
 gem 'rspec'
 gem 'json-schema'
 gem 'jsonpath'
+gem 'json_spec'
 gem 'pry'
 

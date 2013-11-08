@@ -1,6 +1,6 @@
 {
    "$schema": "http://json-schema.org/draft-04/schema#",
-   "description": "Generated from spec/fixtures/examples/servers.json with shasum 568cdaa5cef13f7b5ece95a9dc6d65460d8362ba",
+   "description": "Generated from kata/spec/fixtures/examples/servers.json with shasum 568cdaa5cef13f7b5ece95a9dc6d65460d8362ba",
    "type": "object",
    "required": ["servers"],
    "properties": {

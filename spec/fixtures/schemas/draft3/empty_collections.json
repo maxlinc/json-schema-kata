@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-03/schema#",
-    "description": "Generated from spec/fixtures/examples/empty_collections.json with shasum 136e83755f93cb49d7e6cf255c7cbb28f08d59ce",
+    "description": "Generated from kata/spec/fixtures/examples/empty_collections.json with shasum 136e83755f93cb49d7e6cf255c7cbb28f08d59ce",
     "type": "object",
     "required": true,
     "properties": {
