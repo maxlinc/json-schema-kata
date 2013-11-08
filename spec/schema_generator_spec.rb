@@ -1,4 +1,13 @@
 # encoding: utf-8
+def run_test example_file, challenge, schema_version = :draft4
+  example = File.basename example_file
+  expected = File.expand_path(example, "spec/fixtures/schemas/#{challenge.to_s}")
+  it "for #{example}" do
+    schema = invoke_challenge "generate_#{challenge}", example_file
+    expect(schema).to be_json_eql(File.read(expected))
+    validate schema, example_file, schema_version
+  end
+end
 
 describe 'generator' do
   drafts = [:draft3, :draft4].each do |draft|
@@ -15,14 +24,16 @@ describe 'generator' do
 
       context 'generates the examples' do
         Dir['spec/fixtures/examples/*.json'].each do |example_file|
-          example = File.basename example_file
-          expected = File.expand_path(example, "spec/fixtures/schemas/#{draft.to_s}")
-          it "for #{example}" do
-            schema = invoke_challenge "generate_#{draft}", example_file
-            expect(schema).to be_json_eql(File.read(expected))
-            validate schema, example_file, draft
-          end
+          run_test example_file, draft, draft
         end
+      end
+    end
+  end
+
+  options = [:defaults].each do |option|
+    context "supports #{option} option" do
+      Dir['spec/fixtures/examples/*.json'].each do |example_file|
+        run_test example_file, option
       end
     end
   end

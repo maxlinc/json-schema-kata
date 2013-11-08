@@ -23,6 +23,7 @@ You just need to create a script for each challenge.  If you don't have a script
 The current challenges are:
 - `scripts/challenges/generate_draft3`
 - `scripts/challenges/generate_draft4`
+- `scripts/challenges/generate_defaults`
 
 json-schema-kata will call your script with one argument: a file containing example json.
 
@@ -47,12 +48,15 @@ $ bundle exec rake
 
 The tests check if implementations:
 
-* **Detecting optional properties:** if you have an array of hashes, then will detect which hash keys exist in every instance of the hash and which ones only exist in some, and use this data to decide if the key is required or optional in the schema.
-* **Assume required:** in all other cases, I assume everything I find in the sample is required.  I believe it is better to generate a schema that is too strict than too lenient.  It is easy to review and fix false negatives, by updating the schema to mark those items as optional.  A false positive will go unnoticed and will not point you towards a solution.
-* **Array assumptions:** Similarly, I assume arrays must have at least 1 element, unless the sample contains an empty array.  Again, this is to create false negatives instead of false positives.
-* **Detect types:** I detect objects, arrays, strings, integers, numbers and booleans.
-* **Description:** generates a description indicating what sample the schema came from.  Useful to determine if differences between and existing and freshly generated schema are from customizations or because the sample data has changed.  Sample description: *"Generated from kata/spec/fixtures/examples/servers.json with shasum 568cdaa5cef13f7b5ece95a9dc6d65460d8362ba"*
-* **Versions:** Generate both draft3 and draft4.
+* **Schema Versions**: Support draft3 and draft4 of json-schema.
+* **Options**:
+  * **Defaults**: Can generate default values.
+  * **Descriptions**: Can generate a description indicating where the schema came from.
+* **Features/Assumptions**:
+  * **Detecting optional properties:** if you have an array of hashes, then will detect which hash keys exist in every instance of the hash and which ones only exist in some, and use this data to decide if the key is required or optional in the schema.
+  * **Assume required:** in all other cases, I assume everything I find in the sample is required.  I believe it is better to generate a schema that is too strict than too lenient.  It is easy to review and fix false negatives, by updating the schema to mark those items as optional.  A false positive will go unnoticed and will not point you towards a solution.
+  * **Detect types:** I detect objects, arrays, strings, integers, numbers and booleans.
+
 
 ## Why?
 
