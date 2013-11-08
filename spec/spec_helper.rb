@@ -6,8 +6,6 @@ RSpec.configure do |c|
   c.filter_run_excluding :schema_version => ENV['EXCLUDE_SCHEMA_VERSION']
 end
 
-raise "JSON_GENERATOR environment variable must be set!" unless ENV['JSON_GENERATOR']
-
 def clean_output(output)
   begin
     json = JSON.parse output
@@ -24,8 +22,12 @@ def compare_without_whitespace actual, expected
   expect(actual_cleaned).to eq expected_cleaned
 end
 
-def invoke_generator example_file, version = :draft3
-  `#{ENV['JSON_GENERATOR']} #{example_file} #{version.to_s}`
+def invoke_challenge challenge, example_file
+  example_file = File.absolute_path example_file
+  example_file = example_file.gsub(Dir.pwd + '/', '')
+  challenge_script = "../scripts/challenges/#{challenge}"
+  pending "#{challenge_script} does not exist" unless File.readable? challenge_script
+  `#{challenge_script} #{example_file}`
 end
 
 def validate schema, example_file, version

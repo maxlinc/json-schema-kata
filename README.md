@@ -14,17 +14,19 @@ It's a challenge.  It's like [FizzBuzz](http://c2.com/cgi/wiki?FizzBuzzTest), bu
 
 It is not tied to any language or paradigm.  You need ruby to run the tests, but you can implement your solution in any language.  Try [Seven Languages in Seven Weeks](http://pragprog.com/book/btlang/seven-languages-in-seven-weeks).  Try [thinking functionally](http://www.ibm.com/developerworks/library/j-ft1/).  Try creating a [Domain-Specific Language](http://martinfowler.com/books/dsl.html).
 
-Remember ot let them know at [json-schema.org](http://json-schema.org/) if you come up with an implementation you want to share!
+Remember to let them know at [json-schema.org](http://json-schema.org/) if you come up with an implementation you want to share!
 
 ## How?
 
-Right now, you set the `JSON_GENERATOR` environment variable to the command to run your implementation.  It expects it to take args:
+You just need to create a script for each challenge.  If you don't have a script for a given challenge, the test will be marked as "pending".  If you have a script, json-schema-kata will check your results.
 
-```sh
-$ your_prog <json_file> <json_schema_version>
-```
+The current challenges are:
+- `scripts/challenges/generate_draft3`
+- `scripts/challenges/generate_draft4`
 
-If your program has different usage, you'll need a wrapper script.
+json-schema-kata will call your script with one argument: a file containing example json.
+
+You can put anything executable in the script, whether it's a wrapper to a command-line program or a program that invokes your API.
 
 If you're confused, see [json-schema-generator](https://github.com/maxlinc/json-schema-generator) as an example.
 

@@ -4,7 +4,7 @@ describe 'generator' do
   drafts = [:draft3, :draft4].each do |draft|
     context "supports #{draft}", :schema_version => draft do
       context 'the description' do
-        let(:schema) { invoke_generator 'spec/fixtures/examples/simple.json', draft }
+        let(:schema) { invoke_challenge "generate_#{draft}", 'spec/fixtures/examples/simple.json' }
         it 'includes the file name' do
           expect(schema).to include('Generated from spec/fixtures/examples/simple.json')
         end
@@ -18,7 +18,7 @@ describe 'generator' do
           example = File.basename example_file
           expected = File.expand_path(example, "spec/fixtures/schemas/#{draft.to_s}")
           it "for #{example}" do
-            schema = invoke_generator example_file, draft
+            schema = invoke_challenge "generate_#{draft}", example_file
             compare_without_whitespace schema, File.read(expected)
             validate schema, example_file, draft
           end
