@@ -18,8 +18,12 @@
             "minItems": 0,
             "uniqueItems": true,
             "items": {
-                "type": "string"
             }
-        }
+        },
+        "hash": {
+             "type": "object",
+             "properties": {
+              }
+            }
     }
 }
