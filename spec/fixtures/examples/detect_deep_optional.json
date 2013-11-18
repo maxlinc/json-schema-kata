@@ -1,0 +1,21 @@
+{
+  "hash":{
+    "array": [
+      {
+        "inner_array": [
+          {
+            "name": "inner_hash",
+            "field1": "optional"
+          }
+        ]
+      },
+      {
+        "inner_array": [
+          {
+            "name": "inner_hash"
+          }
+        ]
+      }
+    ]
+  }
+}

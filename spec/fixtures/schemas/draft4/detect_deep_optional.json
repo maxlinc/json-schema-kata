@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Generated from kata/spec/fixtures/examples/detect_deep_optional.json with shasum b0bee56b8b1607136d36529d87e224fcd5305fd0",
+  "type": "object",
+  "required": [
+    "hash"
+  ],
+  "properties": {
+    "hash": {
+      "type": "object",
+      "required": [
+        "array"
+      ],
+      "properties": {
+        "array": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": [
+              "inner_array"
+            ],
+            "properties": {
+              "inner_array": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "field1": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
