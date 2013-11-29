@@ -12,7 +12,6 @@ desc 'Ensure the reference schemas can validate the examples'
 task :validate_schemas do
   failures = []
   Dir['spec/fixtures/examples/*.json'].each do |example_file|
-    next if example_file =~ /optional/
     example = File.basename example_file
     data = JSON.load(File.read example_file)
 
@@ -27,6 +26,7 @@ task :validate_schemas do
         $stderr.puts "#{example}: #{e.message}"
       end
       # Everything is required, dropping any field should cause a validation error
+      next if example_file =~ /optional|simple_root_array/
       data = JSON.load(File.read example_file)
       test_subsets_fail data, schema, version
     end
