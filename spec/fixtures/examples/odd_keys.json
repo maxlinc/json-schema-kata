@@ -1,0 +1,8 @@
+{
+  "servers": [
+    {
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "OS-DCF:diskConfig": "AUTO"
+    }
+  ]
+}
